@@ -1,10 +1,8 @@
 import tflib as lib
 
 import numpy as np
-#import tensorflow as tf
-import tensorflow.compat.v1 as tf
+import tensorflow as tf
 
-tf.disable_v2_behavior() 
 _default_weightnorm = False
 def enable_default_weightnorm():
     global _default_weightnorm
@@ -94,7 +92,7 @@ def Conv1D(name, input_dim, output_dim, filter_size, inputs, he_init=True, mask_
             padding='SAME',
             data_format='NCHW'
         )
-        #print(f"value={inputs},filters={filters},stride={stride}")
+
         if biases:
             _biases = lib.param(
                 name+'.Biases',
